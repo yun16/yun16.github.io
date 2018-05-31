@@ -85,29 +85,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>出于各种原因注册了一个新的 GitHub 账户，然后想把 Hexo 部署到 GitHub Pages 上作为记录平常碎碎念的博客平台，整个过程网络上的资料很多，这里就不再复述，我主要参考了下面两篇文章的内容：</p>
-<ol>
-<li><a href="https://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="noopener">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></li>
-<li><a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">使用Hexo+Github一步步搭建属于自己的博客（基础）</a></li>
-</ol>
-<p>完成了大部分步骤之后，我在将 Hexo 部署到 GitHub Pages 时命令行报了错</p>
-<pre><code>remote: Permission to yun16/yun16.git denied to shuaiyunzhang.
-fatal: unable to access &apos;https://github.com/yun16/yun16.git/&apos;: The requested URL returned error: 403
-</code></pre><p><img src="http://7vzok8.com1.z0.glb.clouddn.com/Yuki-p01-01.png" alt="报错信息"><br>其中<code>shuaiyunzhang</code>是我前一个账号的名字，现在的是<code>yun16</code>，很显然这个是权限的问题，其间我花了很长时间去搜索报错的代码，在 GitHub 和 stack overflow 上看了很多相关问题，但没有找到类似情况的确切解决方案，后面转换搜索策略，对搜索关键词和搜索条件进行限制，终于找到了一篇文章<a href="http://nsoft.vip/index.php/archives/18/" target="_blank" rel="noopener">Mac之Git账号的坑</a>，里面提到了Mac多Git账号配置，顺藤摸瓜找到了 GitHub 官网的<a href="https://help.github.com/articles/updating-credentials-from-the-osx-keychain/" target="_blank" rel="noopener">帮助文档</a></p>
-<p>里面提到了两种方式：更新资质或者删除资质，我选择了第二种方式。</p>
-<pre><code>$ git credential-osxkeychain erase
-host=github.com
-protocol=https
-[Press Return]
-</code></pre><blockquote>
-<p>If it’s successful, nothing will print out. To test that it works, try and clone a repository from GitHub. If you are prompted for a password, the keychain entry was deleted.</p>
-</blockquote>
-<p>然后执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo d</code>命令，成功部署。</p>
-<p><em>题外话：个人觉得这个问题资料比较少的原因应该是很少有人会闲的去换自己的 GitHub 账号……</em></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/05/31/换GitHub账号后将Hexo部署到GitHub-Pages时遇到的权限问题/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yun16.github.io/2018/05/31/换GitHub账号后将Hexo部署到GitHub-Pages时遇到的权限问题/" data-id="cjhuhkm7200001tj2t61fiyrf" class="article-share-link">Share</a>
+      <a data-url="https://yun16.github.io/2018/05/31/换GitHub账号后将Hexo部署到GitHub-Pages时遇到的权限问题/" data-id="cjhuhqw9m00006bj2kv5wvtnx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
